@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Consumo del Mes</title>
+    <link rel="stylesheet" href="porcentaje.css">
+</head>
+<body>
+<!-- Botón de regreso -->
+<button onclick="location.href='home.html'" class="back-button">Regresar</button>
+
+<!-- Contenedor principal -->
+<div class="container">
+    <!-- Marco de Consumo del Mes -->
+    <div class="frame glow">
+        <h2>Consumo del Mes</h2>
+    </div>
+
+    <!-- Círculo con animación de agua -->
+    <div class="circle-container">
+        <div class="circle">
+            <div class="wave"></div>
+            <div class="percentage" id="percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Marco para Pagos -->
+    <div class="frame glow">
+        <h2>Pago Total</h2>
+        <div id="pagoTotal">S/0.00</div>
+    </div>
+
+    <!-- Marco para Pagos Extras -->
+    <div class="frame glow" id="extraPagoFrame" style="display: none;">
+        <h2>Pago Extras</h2>
+        <div id="pagoExtra">S/0.00</div>
+    </div>
+</div>
+
+<!-- Modal personalizado para alertas -->
+<div id="customAlert" class="custom-alert">
+    <div class="custom-alert-content">
+        <p id="alertMessage"></p>
+        <button id="closeAlertButton">Aceptar</button>
+    </div>
+</div>
+
+
+
+<!-- Script -->
+<script src="porcentaje.js"></script>
+</body>
+</html>
+
+

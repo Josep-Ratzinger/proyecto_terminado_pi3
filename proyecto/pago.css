@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff; /* Fondo celeste claro */
+    overflow-x: hidden;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #2196f3; /* Azul claro */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background-color: #1976d2; /* Azul más profundo */
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.7);
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Estilo del recuadro */
+.frame {
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+    background: linear-gradient(0deg, #ffffff, #e3f2fd); /* De blanco a azul claro */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.5); /* Sombra azul */
+    color: #0c0c0c; /* Texto negro */
+}
+
+/* Animación del resplandor */
+.glow:before, .glow:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    background: linear-gradient(45deg,
+    rgba(33, 150, 243, 1), /* Azul */
+    rgba(0, 191, 255, 1), /* Celeste */
+    rgba(135, 206, 250, 1) /* Azul claro */
+    );
+    background-size: 400%;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.glow:after {
+    filter: blur(40px);
+}
+
+/* Estilo de los encabezados */
+h2, h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2196f3; /* Azul */
+}
+
+/* Estilo del texto de las etiquetas */
+label {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0c0c0c; /* Negro */
+}
+
+/* Estilo del selector */
+select {
+    padding: 20px;
+    font-size: 20px;
+    width: 100%;
+    border: 1px solid #2196f3; /* Azul */
+    border-radius: 5px;
+    background-color: #ffffff; /* Blanco */
+    color: #0c0c0c; /* Negro */
+}
+
+/* Estilo del contenido del recuadro */
+.frame div {
+    margin: 20px 0;
+}
+
+.frame p {
+    font-size: 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #0c0c0c; /* Negro */
+}
+

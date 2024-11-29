@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago de Meses Anteriores</title>
+    <link rel="stylesheet" href="pago.css">
+</head>
+<body>
+
+<button onclick="location.href='home.html'" class="back-button">Regresar</button>
+
+<div class="container">
+    <h2>Pago de Meses Anteriores</h2>
+    <!-- Selección de Mes -->
+    <div class="frame glow">
+        <label for="mes">Seleccionar Mes:</label>
+        <select id="mes">
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+            <option value="marzo">Marzo</option>
+            <option value="abril">Abril</option>
+            <option value="mayo">Mayo</option>
+            <option value="junio">Junio</option>
+            <option value="julio">Julio</option>
+            <option value="agosto">Agosto</option>
+            <option value="setiembre">Setiembre</option>
+            <option value="octubre">Octubre</option>
+            <option value="noviembre">Noviembre</option>
+            <option value="diciembre">Diciembre</option>
+            <!-- Agrega más meses según sea necesario -->
+        </select>
+    </div>
+
+    <!-- Información de pagos -->
+    <div class="frame glow">
+        <h3>Información del Pago</h3>
+        <div>
+            <p><strong>Pago Fijo:</strong> <span id="pagoFijo">S/24.51</span></p>
+            <p><strong>Pago Total:</strong> <span id="pagoTotal">S/60.51</span></p>
+            <p><strong>Pago Extras:</strong> <span id="pagoExtras">S/0.00</span></p>
+        </div>
+    </div>
+</div>
+
+<script src="pago.js"></script>
+</body>
+</html>

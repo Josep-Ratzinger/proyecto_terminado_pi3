@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #E3F2FD; /* Fondo celeste claro */
+}
+
+.box {
+    position: relative;
+    width: 370px;
+    height: 520px;
+    background: #1565C0; /* Azul profundo */
+    border-radius: 50px 5px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 370px;
+    height: 520px;
+    background: linear-gradient(60deg, transparent, #81D4FA, #81D4FA); /* Gradiente azul claro */
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 370px;
+    height: 520px;
+    background: linear-gradient(60deg, transparent, #4FC3F7, #4FC3F7); /* Azul medio */
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: absolute;
+    inset: 2px;
+    border-radius: 50px 5px;
+    background: #FFFFFF; /* Fondo blanco */
+    z-index: 10;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2 {
+    color: #1565C0; /* Azul profundo */
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: 2px solid #81D4FA; /* Azul claro */
+    outline: none;
+    color: #1565C0; /* Azul profundo */
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    border-radius: 5px;
+    z-index: 10;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background: #81D4FA; /* Azul claro */
+    padding: 10px;
+    margin-top: 40px;
+    border-radius: 90px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #FFFFFF; /* Blanco */
+}
+
+input[type="submit"]:active {
+    background: #1565C0; /* Azul profundo */
+    opacity: 0.8;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 1em;
+    color: #4FC3F7; /* Azul medio */
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #1565C0; /* Azul profundo */
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0.75em;
+}
+
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #81D4FA; /* Azul claro */
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i {
+    height: 44px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 25px 0;
+    font-size: 1em;
+    color: #1565C0; /* Azul profundo */
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #4FC3F7; /* Azul medio */
+}
+
+/* Botón de guardar y cancelar */
+.save-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF; /* Blanco */
+    background: #4FC3F7; /* Azul medio */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.save-btn:hover {
+    background: #1565C0; /* Azul profundo */
+    color: white;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #81D4FA; /* Azul claro */
+    border-radius: 5px;
+    background: #FFFFFF; /* Blanco */
+    color: #1565C0; /* Azul profundo */
+    font-size: 1em;
+    outline: none;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 101, 192, 0.8); /* Fondo semi-transparente azul profundo */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #FFFFFF; /* Blanco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h2 {
+    color: #1565C0; /* Azul profundo */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #81D4FA; /* Azul claro */
+    border-radius: 5px;
+    background: #FFFFFF; /* Blanco */
+    color: #1565C0; /* Azul profundo */
+    font-size: 1em;
+    outline: none;
+}
+
+.modal-content .button-container {
+    display: flex;
+}
+
+
+
+
+
+
+
+
